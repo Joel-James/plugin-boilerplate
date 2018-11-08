@@ -1,4 +1,4 @@
-# Duck Dev Plugin Boilerplate
+# Duck Dev Plugin Boilerplate [![Build Status](https://api.travis-ci.com/Joel-James/plugin-boilerplate.svg?branch=master)](https://travis-ci.com/Joel-James/plugin-boilerplate)
 
 Before starting development make sure you read and understand everything in this README.
 
