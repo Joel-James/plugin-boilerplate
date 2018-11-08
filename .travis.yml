@@ -1,13 +1,34 @@
 # .travis.yml
-
 language: php
 
-sudo: false
+sudo: required
 
 php:
-  - 7.0
-  - 7.1
+ - '5.5'
+ - '5.6'
+ - '7.0'
+ - '7.1'
 
-script:
-  # Run your tests here.
-  - echo 'Tested'
+services:
+ - mysql
+
+before_script:
+ - composer self-update
+ - chmod ugo+x bin/travis.sh
+ - ./bin/travis.sh $(phpenv version-name) $(pwd)
+ - mkdir -p ~/.ssh
+ - (umask  077 ; echo $PIPELINES_SSH_KEY | base64 --decode > ~/.ssh/id_rsa)
+ - ssh-keyscan -t rsa -H bitbucket.org >> ~/.ssh/known_hosts
+ - git submodule update --init --recursive
+ - service mysql start
+ - bash misc/deploy-wordpress.sh
+ - cp -R $BITBUCKET_CLONE_DIR /tmp/wordpress/wp-content/plugins/wp-smushit
+ - php -S localhost:8080 -t /tmp/wordpress &>/dev/null&
+ - codecept run wpunit
+
+install:
+ - travis_retry composer install --no-interaction --prefer-source --dev
+
+notifications:
+ on_success: never
+ on_failure: always
