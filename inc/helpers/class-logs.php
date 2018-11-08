@@ -10,8 +10,8 @@ defined( 'WPINC' ) || die;
  *
  * Error logs, site logs and more for the DD Boilerplate.
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  */
@@ -20,7 +20,7 @@ class Logs {
 	/**
 	 * Log something to PHP error log.
 	 *
-	 * @param mixed $data Log data (array or string).
+	 * @param mixed $data  Log data (array or string).
 	 * @param bool  $force Should force log even if WP_DEBUG is not enabled?
 	 *
 	 * @since  1.0.0

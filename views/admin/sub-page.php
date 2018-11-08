@@ -6,8 +6,8 @@ defined( 'WPINC' ) || die;
 /**
  * Provide modules admin area view for the plugin
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  */

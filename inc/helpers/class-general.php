@@ -8,8 +8,8 @@ defined( 'WPINC' ) || die;
 /**
  * Define the general utility functionality.
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  */

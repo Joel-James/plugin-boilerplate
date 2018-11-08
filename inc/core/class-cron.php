@@ -24,17 +24,15 @@ class Cron extends Base {
 	 */
 	public function init() {
 
-		$this->add_action( 'ddb_process_stats', $this, 'process_stats' );
+		$this->add_action( 'ddb_sample_cron', $this, 'sample_cron' );
 	}
 
 	/**
-	 * Process daily stats of DD Boilerplate.
-	 *
-	 * Check expiry of sites and flag expired ones.
+	 * Sample cron function DD Boilerplate.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
-	public function process_stats() {}
+	public function sample_cron() {}
 }

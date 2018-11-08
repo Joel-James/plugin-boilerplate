@@ -8,8 +8,8 @@ defined( 'WPINC' ) || die;
 /**
  * Define the request functionality.
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  */
@@ -18,8 +18,8 @@ class Request {
 	/**
 	 * Get a value from $_GET global.
 	 *
-	 * @param string $string String name.
-	 * @param mixed $default Default value.
+	 * @param string $string  String name.
+	 * @param mixed  $default Default value.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -40,8 +40,8 @@ class Request {
 	/**
 	 * Get a value from $_POST global.
 	 *
-	 * @param string $string String name.
-	 * @param mixed $default Default value.
+	 * @param string $string  String name.
+	 * @param mixed  $default Default value.
 	 *
 	 * @since  1.0.0
 	 * @access public

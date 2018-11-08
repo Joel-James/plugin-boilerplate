@@ -10,8 +10,8 @@ defined( 'WPINC' ) || die;
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  **/
@@ -64,14 +64,9 @@ class Activator {
 	 */
 	private static function create_crons() {
 
-		// If not main site bail.
-		if ( ! is_main_site() ) {
-			return;
-		}
-
 		// Register new cron for our plugin.
-		if ( ! wp_next_scheduled ( 'ddb_process_stats' ) ) {
-			wp_schedule_event( strtotime( date( 'Y-m-d 23:59:59' ) ), 'daily', 'ddb_process_stats' );
+		if ( ! wp_next_scheduled( 'ddb_sample_cron' ) ) {
+			wp_schedule_event( strtotime( date( 'Y-m-d 23:59:59' ) ), 'daily', 'ddb_sample_cron' );
 		}
 	}
 }

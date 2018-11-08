@@ -8,8 +8,8 @@ defined( 'WPINC' ) || die;
 /**
  * Define the settings utility functionality.
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  */
@@ -27,8 +27,8 @@ class Settings {
 	/**
 	 * Get a single setting value.
 	 *
-	 * @param string $key Setting key.
-	 * @param string $group Setting group.
+	 * @param string $key     Setting key.
+	 * @param string $group   Setting group.
 	 * @param mixed  $default Default value.
 	 *
 	 * @since  1.0.0
@@ -84,7 +84,7 @@ class Settings {
 	/**
 	 * Update a single setting value.
 	 *
-	 * @param string $key Setting key.
+	 * @param string $key   Setting key.
 	 * @param mixed  $value Setting value.
 	 * @param string $group Setting group.
 	 *
@@ -101,7 +101,7 @@ class Settings {
 		}
 
 		// Get all values first.
-		$options = self::get_options( );
+		$options = self::get_options();
 
 		/**
 		 * Filter to modify settings values before updating.

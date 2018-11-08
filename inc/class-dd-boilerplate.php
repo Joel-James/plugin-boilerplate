@@ -13,8 +13,8 @@ use DD_Boilerplate\Inc\Front;
  * The core plugin class.
  * Defines internationalization, admin-specific hooks, and public-facing site hooks.
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  */
@@ -102,7 +102,7 @@ final class DD_Boilerplate extends Core\Base {
 	 * @since 1.0.0
 	 *
 	 * @static
-	 * @see DD_Boilerplate()
+	 * @see   DD_Boilerplate()
 	 *
 	 * @return DD_Boilerplate
 	 */
@@ -253,7 +253,7 @@ final class DD_Boilerplate extends Core\Base {
 	/**
 	 * Define constant if not already set.
 	 *
-	 * @param string $name Constant name.
+	 * @param string      $name  Constant name.
 	 * @param string|bool $value Constant value.
 	 *
 	 * @since  1.0.0

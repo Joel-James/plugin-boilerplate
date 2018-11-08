@@ -10,8 +10,8 @@ use DD_Boilerplate\Inc\Core\Base;
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  */

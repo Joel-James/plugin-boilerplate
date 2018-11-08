@@ -13,8 +13,8 @@ defined( 'WPINC' ) || die;
  * 2. /themes/theme/account.php
  * 3. /plugins/ddb-templates/templates/account.php
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  */

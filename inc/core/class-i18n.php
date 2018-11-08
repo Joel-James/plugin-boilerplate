@@ -11,8 +11,8 @@ defined( 'WPINC' ) || die;
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link  https://duckdev.com
- * @since 1.0.0
+ * @link   https://duckdev.com
+ * @since  1.0.0
  *
  * @author Joel James <me@joelsays.com>
  */
@@ -23,7 +23,7 @@ class I18n extends Base {
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    string    $text_domain The text domain of the plugin.
+	 * @var    string $text_domain The text domain of the plugin.
 	 */
 	private $text_domain = 'dd-boilerplate';
 
