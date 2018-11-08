@@ -9,7 +9,7 @@ Also, don't forget to document your code properly.
 Clone the plugin repo and checkout the `development` branch
 
 ```
-# git clone git@bitbucket.org:Joel_James/pro-sites.git --recursive
+# git clone https://github.com/Joel-James/plugin-boilerplate.git --recursive
 # git fetch && git checkout development
 ```
 
