@@ -1,34 +1,29 @@
 # .travis.yml
+sudo: false
+
 language: php
 
-sudo: required
+notifications:
+  on_success: never
+  on_failure: change
 
 php:
- - '5.5'
- - '5.6'
- - '7.0'
- - '7.1'
+  - nightly # PHP 7.0
+  - 5.6
+  - 5.5
+  - 5.4
 
-services:
- - mysql
+env:
+  - WP_PROJECT_TYPE=plugin WP_VERSION=latest WP_MULTISITE=0 WP_TEST_URL=http://localhost:12000 WP_TEST_USER=test WP_TEST_USER_PASS=test
+
+matrix:
+  allow_failures:
+    - php: nightly
 
 before_script:
- - composer self-update
- - chmod ugo+x bin/travis.sh
- - ./bin/travis.sh $(phpenv version-name) $(pwd)
- - mkdir -p ~/.ssh
- - (umask  077 ; echo $PIPELINES_SSH_KEY | base64 --decode > ~/.ssh/id_rsa)
- - ssh-keyscan -t rsa -H bitbucket.org >> ~/.ssh/known_hosts
- - git submodule update --init --recursive
- - service mysql start
- - bash misc/deploy-wordpress.sh
- - cp -R $BITBUCKET_CLONE_DIR /tmp/wordpress/wp-content/plugins/wp-smushit
- - php -S localhost:8080 -t /tmp/wordpress &>/dev/null&
- - codecept run wpunit
+  # Install composer packages before trying to activate themes or plugins
+  # - composer install
+  - bash https://raw.githubusercontent.com/Joel-James/plugin-boilerplate/master/misc/deploy-wordpress.sh test root '' localhost $WP_VERSION
 
-install:
- - travis_retry composer install --no-interaction --prefer-source --dev
-
-notifications:
- on_success: never
- on_failure: always
+script:
+  - phpcs --standard=WordPress ./**/*.php
