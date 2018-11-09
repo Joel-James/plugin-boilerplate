@@ -1,6 +1,6 @@
 <?php
 
-namespace DD_Boilerplate\Inc;
+namespace DD_Boilerplate\Inc\Core;
 
 // If this file is called directly, abort.
 defined( 'WPINC' ) || die;

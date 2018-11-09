@@ -30,34 +30,14 @@ final class DD_Boilerplate extends Core\Base {
 	private static $instance;
 
 	/**
-	 * The name of this plugin.
-	 *
-	 * @var string $plugin_name The name of this plugin.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 */
-	protected $plugin_name;
-
-	/**
-	 * The current version of the plugin.
-	 *
-	 * @var string $plugin_version The current version of the plugin.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 */
-	protected $plugin_version;
-
-	/**
 	 * Admin class instance.
 	 *
 	 * @var Admin\Admin
 	 *
 	 * @since  1.0.0
-	 * @access protected
+	 * @access private
 	 */
-	protected $admin;
+	private $admin;
 
 	/**
 	 * Front class instance.
@@ -65,9 +45,9 @@ final class DD_Boilerplate extends Core\Base {
 	 * @var Front\Front
 	 *
 	 * @since  1.0.0
-	 * @access protected
+	 * @access private
 	 */
-	protected $frontend;
+	private $front;
 
 	/**
 	 * Core class instance.
@@ -75,9 +55,9 @@ final class DD_Boilerplate extends Core\Base {
 	 * @var Core\Core
 	 *
 	 * @since  1.0.0
-	 * @access protected
+	 * @access private
 	 */
-	protected $core;
+	private $core;
 
 	/**
 	 * Initialize and set properties.
@@ -89,9 +69,6 @@ final class DD_Boilerplate extends Core\Base {
 
 		// Initialize.
 		$this->init();
-
-		$this->plugin_name    = DDB_NAME;
-		$this->plugin_version = DDB_VERSION;
 	}
 
 	/**
@@ -131,10 +108,46 @@ final class DD_Boilerplate extends Core\Base {
 
 		$this->define_constants();
 		$this->load_depends();
-		$this->init_hooks();
 		$this->set_locale();
+		$this->init_hooks();
 		$this->define_classes();
 		$this->init_classes();
+	}
+
+	/**
+	 * Getter method for core.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return Core\Core
+	 */
+	public function core() {
+
+		return $this->core;
+	}
+
+	/**
+	 * Getter method for admin.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return Admin\Admin
+	 */
+	public function admin() {
+
+		return $this->admin;
+	}
+
+	/**
+	 * Getter method for front.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return Front\Front
+	 */
+	public function front() {
+
+		return $this->front;
 	}
 
 	/**
@@ -168,9 +181,9 @@ final class DD_Boilerplate extends Core\Base {
 	private function define_classes() {
 
 		// Define controllers.
-		$this->admin    = new Admin\Admin();
-		$this->frontend = new Front\Front();
-		$this->core     = new Core\Core();
+		$this->admin = new Admin\Admin();
+		$this->front = new Front\Front();
+		$this->core  = new Core\Core();
 	}
 
 	/**
@@ -213,7 +226,7 @@ final class DD_Boilerplate extends Core\Base {
 
 		// Initialize controllers.
 		$this->admin->init();
-		$this->frontend->init();
+		$this->front->init();
 		$this->core->init();
 	}
 
@@ -230,7 +243,7 @@ final class DD_Boilerplate extends Core\Base {
 	private function init_hooks() {
 
 		// The code that runs during plugin activation.
-		register_activation_hook( DDB_PLUGIN_FILE, array( 'DD_Boilerplate\Inc\Core\Activator', 'activate' ) );
+		//register_activation_hook( DDB_PLUGIN_FILE, array( 'DD_Boilerplate\Inc\Core\Activator', 'activate' ) );
 
 		// The code that runs during plugin deactivation.
 		register_deactivation_hook( DDB_PLUGIN_FILE, array( 'DD_Boilerplate\Inc\Core\Deactivator', 'deactivate' ) );
